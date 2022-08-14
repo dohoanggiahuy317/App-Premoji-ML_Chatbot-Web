@@ -1,5 +1,5 @@
 from chatterbot import ChatBot
-# from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
 import json
 
@@ -14,8 +14,8 @@ class GenerateChatBot:
         print("Done Training")
 
     def ChatBotTraining(self):
-        # trainer = ChatterBotCorpusTrainer(self.chatbot)
-        # trainer.train("chatterbot.corpus.english")
+        trainer = ChatterBotCorpusTrainer(self.chatbot)
+        trainer.train("chatterbot.corpus.english")
 
         # --------------------------------------------------------------------------------------------------------------
         trainer = ListTrainer(self.chatbot)
