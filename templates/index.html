@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="static/styles/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Premoji</h1> 
+        <h2> ML online chat bot by JaWeee</h2>
+    </div>
+
+    <div>
+        <div id="chatbox">
+            <div class="botText"><div>Hi! I'm Chatterbot.</div></div>
+            <div class="botText"><div>
+                Please enter these command to select bots:<br>
+                I want to chat <br>
+                I want emoji <br>
+                I want music <br>
+                I want movie
+            </div></div>
+            <div class="botText"><div>Please wait the bot to be ready before chatting! Happy Coding!</div></div>
+        </div>
+        <div id="userInput">
+            <input id="textInput" type="text" name="msg" placeholder="Message">
+            <input id="buttonInput" type="submit" value="Send">
+        </div>
+        <script>
+            function getBotResponse() {
+                var rawText = $("#textInput").val();
+                var userHtml = '<div class="userText"><div>' + rawText + '</div></div>';
+                $("#textInput").val("");
+                $("#chatbox").append(userHtml);
+                document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+                $.get("/get", { msg: rawText }).done(function (data) {
+                    var botHtml = data;
+                    $("#chatbox").append(botHtml);
+                    document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+                });
+            }
+            $("#textInput").keypress(function (e) {
+                if (e.which == 13) {
+                    getBotResponse();
+                }
+            });
+            $("#buttonInput").click(function () {
+                getBotResponse();
+            })
+        </script>
+    </div>
+</body>
+
+</html>
