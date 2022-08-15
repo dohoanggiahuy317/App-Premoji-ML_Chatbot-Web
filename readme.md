@@ -20,4 +20,4 @@ This bot uses sklearn to learn a pattern from a data set to predict user emotion
 ### Movie and Suggestion bot
 These 2 bot use selenium and beautifulsoup libraries to parse YouTube and ImDB website. They use user's input as keyword for the searching and retunr the HTML tag with the songs or movies name. This bot can also take the value that is predicted from felling detection bot for searching in order to improve user experience
 
-<img width="814" alt="Screen Shot 2022-08-15 at 1 55 52 AM" src="https://user-images.githubusercontent.com/72744045/184551059-f7419314-2446-4c46-9d0d-1461b55ea4c6.png">
+<img width="815" alt="Screen Shot 2022-08-15 at 1 55 52 AM" src="https://user-images.githubusercontent.com/72744045/184551059-f7419314-2446-4c46-9d0d-1461b55ea4c6.png">
